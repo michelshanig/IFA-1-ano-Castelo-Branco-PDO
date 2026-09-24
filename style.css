@@ -1,0 +1,75 @@
+/* ===================================================================
+* MUSEU DIGITAL DO PARANÁ - ESTILOS PERSONALIZADOS E AJUSTES
+* =================================================================== */
+
+/* Perspective 3D para o Livro */
+.perspective-book {
+    perspective: 1600px;
+}
+
+/* Transição suave ao virar páginas */
+.livro-wrapper {
+    transition: transform 0.4s ease-in-out, opacity 0.3s ease;
+}
+
+.animar-virada {
+    animation: virarPagina 0.45s ease-in-out;
+}
+
+@keyframes virarPagina {
+    0% {
+        transform: rotateY(0deg) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: rotateY(-8deg) scale(0.98);
+        opacity: 0.7;
+    }
+    100% {
+        transform: rotateY(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Marcador de Livro / Ribbon */
+.clip-bookmark {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
+}
+
+/* Animação de Zoom nas Imagens */
+.img-zoom-container {
+    overflow: hidden;
+}
+
+.img-zoom {
+    transition: transform 0.4s ease-in-out;
+}
+
+.img-zoom-container:hover .img-zoom {
+    transform: scale(1.08);
+}
+
+/* Barra de Rolagem Customizada para as Miniaturas da Lightbox */
+.scrollbar-thin::-webkit-scrollbar {
+    height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #C59B27;
+    border-radius: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #a6811f;
+}
+
+/* Ajuste Foco Canvas 3D */
+#tour-canvas-container canvas,
+#arvore-canvas-container canvas {
+    outline: none;
+}
